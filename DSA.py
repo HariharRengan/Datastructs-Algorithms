@@ -158,6 +158,44 @@ class quene:
     def dequene(self):
         return self.stack.pop(0)
 
+#Python heap
+class heap:
+    def __init__(self, cap):
+        self.arr = []
+        self.cap = cap
+
+    def insert(self, val):
+        if self.cap >= len(self.arr):
+            self.arr.append(val)
+            self.heapify_up()
+
+    def delete(self):
+        if len(self.arr):
+            self.arr[0] = self.arr[-1]
+            self.arr.pop()
+            self.heapify_down()
+
+    def heapify_up(self):
+        i = len(self.arr) - 1
+        while i >= 0 and self.arr[i] > min(self.arr[(i - 1) // 2], self.arr[(i - 2) // 2]):
+            if self.arr[i] < self.arr[(i - 1) // 2]:
+                self.arr[i], self.arr[(i - 1) // 2] = self.arr[(i - 1) // 2], self.arr[i]
+                i = (i - 1) // 2
+            else:
+                self.arr[i], self.arr[(i - 2) // 2] = self.arr[(i - 2) // 2], self.arr[i]
+                i = (i - 2) // 2
+
+    def heapify_down(self):
+        i = 0
+        while i < len(self.arr) and self.arr[i] < max(self.arr[i * 2 + 1], self.arr[i * 2 + 2]):
+            if i * 2 + 2 < len(self.arr):
+                break
+            if self.arr[i] < self.arr[i * 2 + 1]:
+                self.arr[i], self.arr[1 * 2 + 1] = self.arr[i * 2 + 1], self.arr[i]
+                i = i * 2 + 1
+            else:
+                self.arr[i], self.arr[1 * 2 + 2] = self.arr[i * 2 + 2], self.arr[i]
+                i = i * 2 + 2
 
 
 
