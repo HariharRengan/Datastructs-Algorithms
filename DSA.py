@@ -65,9 +65,9 @@ def norepeats(arr):
 
 #Linked Lists
 class ListNode:
-    def __init__(self, val):
+    def __init__(self, val, next = None):
         self.val = val
-        self.next = None
+        self.next = next
 
 class linkedList:
     def __init__(self, head):
@@ -82,6 +82,19 @@ class linkedList:
             cur = cur.next
             i += 1
         raise IndexError("Linked List index out of range")
+    def sort(self):
+        head = self.head
+        new = ListNode(0)
+        while head:
+            cur = new
+            while cur.next:
+                if cur.next.val > head.val:
+                    break
+                cur = cur.next
+            n = ListNode(val = head.val, next = cur.next)
+            cur.next = n
+            head = head.next
+        self.head = new.next
 
     def __repr__(self):
         l = []
@@ -196,8 +209,6 @@ class heap:
             else:
                 self.arr[i], self.arr[1 * 2 + 2] = self.arr[i * 2 + 2], self.arr[i]
                 i = i * 2 + 2
-
-
 
 
 
