@@ -1,7 +1,7 @@
 #Arrays and Lists
 
 #Binary search
-def binary_search(arr, n):
+def binary_search(arr, x):
     low, high = 0, len(arr) - 1
     while low <= high:
         mid = low + (high- low) // 2
