@@ -2,16 +2,15 @@
 
 #Binary search
 def binary_search(arr, n):
-    if not arr:
-        return False
-    if len(arr) == 1:
-        return True if arr[0] == n else False
-    x = len(arr) // 2 
-    if arr[x] > n:
-        return binary_search(arr[:x], n)
-    elif arr[x] < n:
-        return binary_search(arr[x:], n)
-    return True
+    low, high = 0, len(arr) - 1
+    while low <= high:
+        mid = low + (high- low) // 2
+        if arr[mid] == x:
+            return mid
+        elif arr[mid] < x:
+            low = mid + 1
+        else:
+            high = mid - 1
 
 #Merge sort
 def merge_sort(arr):
