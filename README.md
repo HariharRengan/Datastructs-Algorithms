@@ -1,1 +1,1 @@
-This is a Python Library with examples on Data Sructures and Algorithms not commonly found in Python. You can find the GitHub <a href="https://github.com/HariharRengan/Datastructs-Algorithms">here</a>.
+This is a Python Library with examples on Data Sructures and Algorithms not commonly found in Python. You can find the PyPi <a href="https://PyPi.org/project/py3dsa">here</a>. <code>pip install py3dsa</code> to install and <code>import py3dsa</code> to use.
