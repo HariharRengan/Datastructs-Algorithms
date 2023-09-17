@@ -11,6 +11,7 @@ def binary_search(arr, n):
             low = mid + 1
         else:
             high = mid - 1
+    return -1
 
 #Merge sort
 def merge_sort(arr):
